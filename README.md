@@ -1,11 +1,16 @@
-<<<<<<< HEAD
-﻿# BerkeleyMLCapstoneEDA
+# Berkeley AI/ML Capstone Project: Employee Absenteeism at Work
 <br>
+Professional Certificate in Machine Learning &Artificial Intelligence
+Berkeley Engineering, Berkeley Hass
+
+**Author**
+Shajen Muttath
 
 ### Business case
 In todays environment of workplace is extremely competitive and leads to increased stress and health issues. This project analyse relationships of workplace absenteeism and various factors. In this project absenteeism is defined as absence from work at normal hours.
+
 #### Dataset
-I have used a data set from Kaggle “Absenteeism_at_work_Project.xls”. 
+The dataset was obtained from Kaggle [absenteeismDataset](https://www.kaggle.com/code/faressayah/predict-employee-absenteeism-from-work/input)
 
 ```
 The dataset have following fields:
@@ -31,19 +36,10 @@ Height                             float64
 Body_mass_index                    float64
 Absenteeism_time_in_hours          float64
 ```
-=======
-### Project Title
-Capstone Project
-Professional Certificate in Machine Learning &Artificial Intelligence
-Berkeley Engineering, Berkeley Hass
 
-**Author**
-Shajen Muttath
-#### Executive summary
->>>>>>> de514a85703d375aba271f66332c0ebeca353422
+## Exploratory Data Analysis
+In this EDA, each feature is analysed to find out their relation with the absenteeism.
 
-## Feature Analysis
-Lets analyse each feature to find out their relation with the absenteeism.
 #### Feature : Absenteeism_time_in_hours
 This feature represents number of hours employee has taken off during the work day.
 The histogram below shows how many hours people take absence. 
@@ -264,10 +260,132 @@ Initial modeling was performed using Logistic Regression. This provided an accur
 
 <img src="images/oddsRatio.PNG">
 
-### Summary
+### Summary on EDA
 The exploratory analysis provided valuable information about each feature. The features Children, Transportation Expense, Seasons and medical reason 'Heath services and Patient management' are major contributors affecting the models.
 
-<<<<<<< HEAD
-=======
-##### Contact and Further Information
->>>>>>> de514a85703d375aba271f66332c0ebeca353422
+<br>
+<br>
+
+## Modeling
+The modeling was performed using multiple models. Following models were used:
+
+```
+    Logistic Regression
+    Random Forest
+    XG Boost
+    Support Vector Machine
+```
+
+### Logistic Regression
+<br>
+
+#### Training Report
+The training of logistic regression model performs with an overall accuracy of 73%, correctly identifying attendance patterns in about 3/4ths of instances. For cases of no absenteeism (class 0), the model achieves a precision of 73% and recall of 76%, indicating it reliably identifies individuals who are not likely to be absent. However, for absenteeism (class 1), it shows slightly lower recall at 68% and precision at 72%, with an F1 score of 0.70, suggesting some missed absenteeism cases. Both macro and weighted average scores are around 0.72–0.73, showing balanced performance across both classes despite a minor class imbalance. While effective, the model could be improved in its ability to capture absenteeism cases with further tuning.
+
+<img src="images/LR_Train.png">
+<br>
+
+#### Testing Report
+On the evaluation data, the logistic regression model for predicting absenteeism achieves an accuracy of 75.92%, closely aligning with the 73% seen in training performance. Precision for identifying no absenteeism (class 0) is 77%, with a recall of 82%, indicating strong performance in correctly identifying instances where absenteeism is unlikely. For cases of absenteeism (class 1), precision is 75% and recall is 68%, slightly lower than for class 0, with an F1 score of 0.71. The macro and weighted averages across precision, recall, and F1 score are each around 0.75–0.76, showing a balanced performance across classes on the evaluation set. Compared to training, the model performs slightly better on evaluation in identifying class 0 cases but maintains a consistent pattern with a minor drop in recall for absenteeism cases. This suggests the model generalizes well to new data, though improvements in capturing absenteeism (class 1) cases could further enhance its usefulness.
+<br>
+<img src="images/LR_Test.png">
+<br>
+
+#### Classifier Metrics Report
+For this logistic regression model classifying absenteeism, the precision-recall tradeoff graph shows how precision and recall change as the classification threshold is adjusted. The intersection point between precision and recall lines, which occurs around the midpoint, suggests a threshold where the model achieves a balance between the two metrics. In both the precision/recall graphs, recall starts high and drops sharply as precision increases, meaning that as the model becomes more precise in identifying absenteeism, it misses a higher proportion of actual absenteeism cases. This steep decline in recall indicates that the model has difficulty maintaining high recall as precision improves, suggesting a limited ability to balance both metrics well across thresholds.For absenteeism prediction, where recall (correctly identifying absenteeism cases) may be prioritized, this graph implies that a lower threshold could favor recall at the cost of some precision.
+
+<br>
+<img src="images/LR_ROC.png">
+
+<br>
+
+**Precision/Recall curve**
+<br>
+For this logistic regression model classifying absenteeism, the precision-recall tradeoff graph shows how precision and recall change as the classification threshold is adjusted. The intersection point between precision and recall lines, which occurs around the midpoint, suggests a threshold where the model achieves a balance between the two metrics. In both the precision/recall graphs, recall starts high and drops sharply as precision increases, meaning that as the model becomes more precise in identifying absenteeism, it misses a higher proportion of actual absenteeism cases. This steep decline in recall indicates that the model has difficulty maintaining high recall as precision improves, suggesting a limited ability to balance both metrics well across thresholds.For absenteeism prediction, where recall (correctly identifying absenteeism cases) may be prioritized, this graph implies that a lower threshold could favor recall at the cost of some precision.
+
+**ROC curve**
+<br>
+This ROC curve illustrates the performance of the logistic regression model for classifying absenteeism, plotting the True Positive Rate (sensitivity) against the False Positive Rate across various thresholds. The curve shows a strong rise, indicating the model captures true positives effectively with low false positives at lower thresholds. The model’s ROC curve moves to the top left corner, demonstrating good discrimination ability. It deviates significantly from the diagonal line, which represents random guessing. The high area under the curve (AUC) suggests that the model effectively distinguishes between absenteeism and non-absenteeism cases and confirms that the model has solid predictive power.
+
+**Cross validation**
+<br>
+The model achieved a mean cross-validation score of 70.13%, indicating a strong expected performance on unseen data. This suggests that the model is capable of effectively identifying factors contributing to absenteeism. The associated standard deviation of +/-5.69% reflects the stability of the model's performance across different data subsets. A low standard deviation implies that the model's predictions are consistent and not overly dependent on any particular training set.
+
+**Coefficients**
+<br>
+Transportation expenses and the number of children have positive associations with absenteeism, while factors like age, season, pet ownership, and health-related responsibilities are associated with lower absenteeism odds. 
+
+### Random Forest
+
+#### Training Report
+The Random Forest model achieved accuracy of 88% on training. 
+
+<img src="images/RF_train_result.png">
+
+#### Testing Report
+The Random Forest model achieved accuracy of 72% on testing, a reduction in accuracy. 
+
+
+<img src="images/RF_test_result.png">
+
+#### Classifier Metrics Report
+
+<img src="images/RF_ROC.png">
+
+**Precision/Recall**
+<br>
+Similarly to the logistic regression, these precision/recall graphs show that as precision increases, recall drops sharply, indicating a tradeoff where improving precision leads to missing more absenteeism cases. The intersection point around the midpoint suggests a balanced threshold, but the rapid decline in recall highlights the model's difficulty in maintaining both metrics
+
+**ROC curves**
+<br>
+Also, similarly to the logistic regression, this ROC curve for the random forest also has a curve that moves to the top left corner, demonstrating good discrimination ability. The high area under the curve suggests that the model can distinguish between absenteeism and non-absenteeism. 
+
+### XG Boost
+
+#### Training Report
+The XGBoost model demonstrates strong performance in predicting absenteeism in the training phase, achieving an overall accuracy of 78%. The model maintains a good balance between precision and recall, effectively capturing absenteeism cases while minimizing misclassifications.
+
+<img src="images/XB_Train.png">
+
+#### Testing Report
+The training model demonstrates slightly better overall accuracy and performance in identifying absentee cases, while the evaluation model excels in recall for non-absentee cases but struggles more with absentee classification.
+<br>
+<img src="images/XB_Test.png">
+
+#### Classifier Metrics Report
+
+<img src="images/XB_ROC.png">
+
+**Precision/Recall**
+The intersection point for precision and recall here suggests a higher threshold than the last two models. Other than that these precision/recall graphs show that as precision increases, recall drops sharply, indicating a tradeoff where improving precision leads to missing more absenteeism cases.
+
+**ROC Curves**
+ This ROC curve for the XGBoost model also has a curve that moves to the top left corner, demonstrating good discrimination ability. The high area under the curve suggests that the model can distinguish between absenteeism and non-absenteeism. It looks relatively the same as the other models ROC curves.
+
+### Support Vector Machine
+
+#### Training Report
+The Support Vector Machine (SVM) training model for predicting absenteeism achieved an accuracy of 75%, demonstrating balanced performance across key metrics such as precision, recall, and F1-score, each at 0.75. This model performs similarly for both absentee and non-absentee classes, with precision and recall scores of 0.76 for non-absentees and 0.73 for absentees.
+<br>
+<img src="images/SVM_Train.png">
+
+#### Testing Report
+The evaluation model reached an accuracy of 80% with higher precision (0.81 for non-absentees and 0.79 for absentees) and recall (0.84 for non-absentees and 0.75 for absentees). The training model achieved an accuracy of 75%, with balanced metrics across precision, recall, and F1-score, each at 0.75, showing similar performance across both absentee and non-absentee classes. The evaluation model was the higher-performing model and it has an F1-score of 0.80, indicating it is better at capturing absenteeism cases accurately and consistently,
+
+<img src="images/SVM_Test.png">
+
+#### Classifier Metrics Report
+
+<img src="images/SVM_ROC.png">
+**Precision/Recall**
+The intersection point for precision and recall here suggests a higher threshold than the last three models. Other than that these precision/recall graphs show that as precision increases, recall drops sharply, indicating a tradeoff where improving precision leads to missing more absenteeism cases.
+**ROC curves**
+The ROC curve for the SVM also has a curve that moves to the top left corner, demonstrating good discrimination ability. The high area under the curve suggests that the model can distinguish between absenteeism and non-absenteeism. The curve is slightly higher than all the other previous models reflecting its high accuracy.
+
+### Comparison of 4 models
+
+<img src="images/ALL_Accurracy_Numbers.png">
+<br>
+<img src="images/ALL_Accurracy_BAR.png">
+
+Looking at this graph,comparing the training and test accuracies across the four models, we observe distinct performance patterns. Logistic regression achieved the highest accuracy on the training data, suggesting it fit the training set well but may be more prone to overfitting, limiting its generalization on new data. Conversely, the random forest had the lowest training accuracy but scored the highest on the test set, indicating strong generalization and effective handling of unseen data. This difference suggests that the random forest model benefited from its ensemble structure, which reduces overfitting through averaging multiple decision trees. On the other hand, the SVM model, while effective in high-dimensional spaces, scored the lowest on the test set, indicating it may require further tuning to improve its generalization to new data.
