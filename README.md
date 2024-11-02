@@ -242,7 +242,7 @@ The medical codes are grouped into 4 following:
 3 Sensory_and_External_Diseases
 4 Reproductive_and_Developmental_Health
 ```
-It seems that people are absent by spending time on medical Health Services and Patient Management process.
+It seems that people are absent by spending time on medical Health Services, Patient Management process and Infecticious Chronic Diseases.
 <br>
 <img src="images/medical_reason.png">
 <br>
