@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿# BerkeleyMLCapstoneEDA
 <br>
 
@@ -30,6 +31,16 @@ Height                             float64
 Body_mass_index                    float64
 Absenteeism_time_in_hours          float64
 ```
+=======
+### Project Title
+Capstone Project
+Professional Certificate in Machine Learning &Artificial Intelligence
+Berkeley Engineering, Berkeley Hass
+
+**Author**
+Shajen Muttath
+#### Executive summary
+>>>>>>> de514a85703d375aba271f66332c0ebeca353422
 
 ## Feature Analysis
 Lets analyse each feature to find out their relation with the absenteeism.
@@ -256,3 +267,7 @@ Initial modeling was performed using Logistic Regression. This provided an accur
 ### Summary
 The exploratory analysis provided valuable information about each feature. The features Children, Transportation Expense, Seasons and medical reason 'Heath services and Patient management' are major contributors affecting the models.
 
+<<<<<<< HEAD
+=======
+##### Contact and Further Information
+>>>>>>> de514a85703d375aba271f66332c0ebeca353422
