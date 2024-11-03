@@ -255,9 +255,6 @@ Overall, heat map does not show any strong relation for being absent.
 Based on the above data analysis I ahve decided to drop the features ID, Height, Hit_target, Disciplinary_failure and Service_time, as they do not provide meaningfull contribution for training and some cases features like Height can be misleading. The feature 'Absenteeism_time_in_hours' is converted into  binary column 'Absent'
 One Hot encoding was applied to Education and Reason_for_absence
 
-### Modeling
-Initial modeling was performed using Logistic Regression. This provided an accurracy of 0.7271. Below table gives analysis of coefficients with odds ratio.
-
 <img src="images/oddsRatio.PNG">
 
 ### Summary on EDA
@@ -391,12 +388,12 @@ The best parammeters for the model are:
  'kernel': 'linear'
 ```
 #### Training Report
-The Support Vector Machine (SVM) training model for predicting absenteeism achieved an accuracy of 75%, demonstrating balanced performance across key metrics such as precision, recall, and F1-score, each at 0.75. This model performs similarly for both absentee and non-absentee classes, with precision and recall scores of 0.76 for non-absentees and 0.73 for absentees.
+The Support Vector Machine (SVM) training model for predicting absenteeism achieved an accuracy of 71%, demonstrating balanced performance across key metrics such as precision, recall, and F1-score, each at 0.71. This model performs similarly for both absentee and non-absentee classes, with precision and recall scores of 0.76 for non-absentees and 0.74 for absentees.
 <br>
 <img src="images/SVM_Train.png">
 
 #### Testing Report
-The evaluation model reached an accuracy of 80% with higher precision (0.81 for non-absentees and 0.79 for absentees) and recall (0.84 for non-absentees and 0.75 for absentees). The training model achieved an accuracy of 75%, with balanced metrics across precision, recall, and F1-score, each at 0.75, showing similar performance across both absentee and non-absentee classes. The evaluation model was the higher-performing model and it has an F1-score of 0.80, indicating it is better at capturing absenteeism cases accurately and consistently,
+The evaluation model reached an accuracy of 73% precision (0.76 for non-absentees and 0.69 for absentees) and recall (0.76 for non-absentees and 0.70 for absentees). The training model achieved an accuracy of 73%, with balanced metrics across precision, recall, and F1-score, each at 0.73, showing similar performance across both absentee and non-absentee classes. The evaluation model was the higher-performing model and it has an F1-score of 0.80, indicating it is better at capturing absenteeism cases accurately and consistently,
 
 <img src="images/SVM_Test.png">
 
@@ -414,7 +411,7 @@ The ROC curve for the SVM also has a curve that moves to the top left corner, de
 <br>
 <img src="images/ALL_Accurracy_BAR.png">
 
-Looking at this graph,comparing the training and test accuracies across the four models, we observe distinct performance patterns. Logistic regression achieved the highest accuracy on the training data, suggesting it fit the training set well but may be more prone to overfitting, limiting its generalization on new data. Conversely, the random forest had the lowest training accuracy but scored the highest on the test set, indicating strong generalization and effective handling of unseen data. This difference suggests that the random forest model benefited from its ensemble structure, which reduces overfitting through averaging multiple decision trees. On the other hand, the SVM model, while effective in high-dimensional spaces, scored the lowest on the test set, indicating it may require further tuning to improve its generalization to new data.
+Looking at this graph, comparing the training and test accuracies across the four models, we observe distinct performance patterns. Random Forest achieved the highest accuracy on the training data, suggesting it fit the training set well but may be more prone to overfitting, limiting its generalization on new data. Conversely, the Logistic Regression had the lower training accuracy but scored the highest on the test set, indicating strong generalization and effective handling of unseen data. This difference suggests that the logistic regression model benefited from its simplicity. On the other hand, the SVM model, while effective in high-dimensional spaces, scored the lowest on the training and test set, indicating it may require further tuning to improve its generalization to new data.
 
 
 ### Executive Summary
