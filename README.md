@@ -415,3 +415,8 @@ The ROC curve for the SVM also has a curve that moves to the top left corner, de
 <img src="images/ALL_Accurracy_BAR.png">
 
 Looking at this graph,comparing the training and test accuracies across the four models, we observe distinct performance patterns. Logistic regression achieved the highest accuracy on the training data, suggesting it fit the training set well but may be more prone to overfitting, limiting its generalization on new data. Conversely, the random forest had the lowest training accuracy but scored the highest on the test set, indicating strong generalization and effective handling of unseen data. This difference suggests that the random forest model benefited from its ensemble structure, which reduces overfitting through averaging multiple decision trees. On the other hand, the SVM model, while effective in high-dimensional spaces, scored the lowest on the test set, indicating it may require further tuning to improve its generalization to new data.
+
+
+### Executive Summary
+Logistic Rgeression is the best model suitable for this problem and takes less time to train compared to other models. Trasposration Expense, number of children and weight are major factors in absenteeism.
+
