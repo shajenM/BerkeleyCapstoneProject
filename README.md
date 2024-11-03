@@ -275,9 +275,11 @@ The modeling was performed using multiple models. Following models were used:
     XG Boost
     Support Vector Machine
 ```
+The dataset was standardized using **StandardScaler** and **MinMaxScaler**
 
 ### Logistic Regression
 <br>
+The training was done using parameter solver 'liblinear' and penalty 11
 
 #### Training Report
 The training of logistic regression model performs with an overall accuracy of 73%, correctly identifying attendance patterns in about 3/4ths of instances. For cases of no absenteeism (class 0), the model achieves a precision of 73% and recall of 76%, indicating it reliably identifies individuals who are not likely to be absent. However, for absenteeism (class 1), it shows slightly lower recall at 68% and precision at 72%, with an F1 score of 0.70, suggesting some missed absenteeism cases. Both macro and weighted average scores are around 0.72–0.73, showing balanced performance across both classes despite a minor class imbalance. While effective, the model could be improved in its ability to capture absenteeism cases with further tuning.
@@ -316,8 +318,18 @@ The model achieved a mean cross-validation score of 70.13%, indicating a strong 
 Transportation expenses and the number of children have positive associations with absenteeism, while factors like age, season, pet ownership, and health-related responsibilities are associated with lower absenteeism odds. 
 
 ### Random Forest
+The best paramters for this model are:
+```
+bootstrap         : True
+max_depth         : 10
+max_features      : auto
+min_samples_leaf  : 2
+min_samples_split : 5
+n_estimators      : 100
+```
 
 #### Training Report
+
 The Random Forest model achieved accuracy of 88% on training. 
 
 <img src="images/RF_train_result.png">
@@ -341,8 +353,17 @@ Similarly to the logistic regression, these precision/recall graphs show that as
 Also, similarly to the logistic regression, this ROC curve for the random forest also has a curve that moves to the top left corner, demonstrating good discrimination ability. The high area under the curve suggests that the model can distinguish between absenteeism and non-absenteeism. 
 
 ### XG Boost
-
+The best parmeters for XGBoost are :
+```
+'base_score'      : 0.5
+'learning_rate'   : 0.05
+'max_depth'       : 5
+'min_child_weight': 5
+'n_estimators'    : 100
+'subsample'       : 0.85
+```
 #### Training Report
+
 The XGBoost model demonstrates strong performance in predicting absenteeism in the training phase, achieving an overall accuracy of 78%. The model maintains a good balance between precision and recall, effectively capturing absenteeism cases while minimizing misclassifications.
 
 <img src="images/XB_Train.png">
@@ -363,7 +384,12 @@ The intersection point for precision and recall here suggests a higher threshold
  This ROC curve for the XGBoost model also has a curve that moves to the top left corner, demonstrating good discrimination ability. The high area under the curve suggests that the model can distinguish between absenteeism and non-absenteeism. It looks relatively the same as the other models ROC curves.
 
 ### Support Vector Machine
-
+The best parammeters for the model are:
+```
+ 'C'     : 60
+ 'gamma' : 0.002
+ 'kernel': 'linear'
+```
 #### Training Report
 The Support Vector Machine (SVM) training model for predicting absenteeism achieved an accuracy of 75%, demonstrating balanced performance across key metrics such as precision, recall, and F1-score, each at 0.75. This model performs similarly for both absentee and non-absentee classes, with precision and recall scores of 0.76 for non-absentees and 0.73 for absentees.
 <br>
