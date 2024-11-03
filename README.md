@@ -418,5 +418,5 @@ Looking at this graph,comparing the training and test accuracies across the four
 
 
 ### Executive Summary
-Logistic Rgeression is the best model suitable for this problem and takes less time to train compared to other models. Trasposration Expense, number of children and weight are major factors in absenteeism.
+Logistic Regression is the best model suitable for this problem and takes less time to train compared to other models. Trasportation Expense, number of children and weight are major contributers in absenteeism.
 
