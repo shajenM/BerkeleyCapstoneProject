@@ -8,6 +8,8 @@ Shajen Muttath
 
 ### Business case
 In todays environment of workplace is extremely competitive and leads to increased stress and health issues. This project analyse relationships of workplace absenteeism and various factors. In this project absenteeism is defined as absence from work at normal hours.
+### Purpose
+Based on information like Transportation Expenses, Medical Reasons, and personal information, we want to predict likelyhood of an employee being away from work.
 
 #### Dataset
 The dataset was obtained from Kaggle [absenteeismDataset](https://www.kaggle.com/code/faressayah/predict-employee-absenteeism-from-work/input)
