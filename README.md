@@ -13,8 +13,13 @@ Based on information like Transportation Expenses, Medical Reasons, and personal
 
 ### Notebooks
 <br>
+
+#### EDA
+
 [NotebookEDA](AbsenteeismEDA.ipynb)
-<br>
+
+#### Modeling
+
 [Notebookmodeling](AbsenteeismModeling.ipynb)
 
 #### Dataset
