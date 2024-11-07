@@ -293,7 +293,7 @@ On the evaluation data, the logistic regression model for predicting absenteeism
 <br>
 
 #### Classifier Metrics Report
-For this logistic regression model classifying absenteeism, the precision-recall tradeoff graph shows how precision and recall change as the classification threshold is adjusted. The intersection point between precision and recall lines, which occurs around the midpoint, suggests a threshold where the model achieves a balance between the two metrics. In both the precision/recall graphs, recall starts high and drops sharply as precision increases, meaning that as the model becomes more precise in identifying absenteeism, it misses a higher proportion of actual absenteeism cases. This steep decline in recall indicates that the model has difficulty maintaining high recall as precision improves, suggesting a limited ability to balance both metrics well across thresholds.For absenteeism prediction, where recall (correctly identifying absenteeism cases) may be prioritized, this graph implies that a lower threshold could favor recall at the cost of some precision.
+For this logistic regression model classifying absenteeism, the precision-recall tradeoff graph shows how precision and recall change as the classification threshold is adjusted. The intersection point between precision and recall lines, which occurs around the midpoint, suggests a threshold where the model achieves a balance between the two metrics. In both the precision/recall graphs, recall starts high and drops sharply as precision increases, meaning that as the model becomes more precise in identifying absenteeism, it misses a higher proportion of actual absenteeism cases. This steep decline in recall indicates that the model has difficulty maintaining high recall as precision improves, suggesting a limited ability to balance both metrics well across thresholds. For absenteeism prediction, where recall (correctly identifying absenteeism cases) may be prioritized, this graph implies that a lower threshold could favor recall at the cost of some precision.
 
 <br>
 <img src="images/LR_ROC.png">
@@ -302,7 +302,7 @@ For this logistic regression model classifying absenteeism, the precision-recall
 
 **Precision/Recall curve**
 <br>
-For this logistic regression model classifying absenteeism, the precision-recall tradeoff graph shows how precision and recall change as the classification threshold is adjusted. The intersection point between precision and recall lines, which occurs around the midpoint, suggests a threshold where the model achieves a balance between the two metrics. In both the precision/recall graphs, recall starts high and drops sharply as precision increases, meaning that as the model becomes more precise in identifying absenteeism, it misses a higher proportion of actual absenteeism cases. This steep decline in recall indicates that the model has difficulty maintaining high recall as precision improves, suggesting a limited ability to balance both metrics well across thresholds.For absenteeism prediction, where recall (correctly identifying absenteeism cases) may be prioritized, this graph implies that a lower threshold could favor recall at the cost of some precision.
+For this logistic regression model classifying absenteeism, the precision-recall tradeoff graph shows how precision and recall change as the classification threshold is adjusted. The intersection point between precision and recall lines, which occurs around the midpoint, suggests a threshold where the model achieves a balance between the two metrics. In both the precision/recall graphs, recall starts high and drops sharply as precision increases, meaning that as the model becomes more precise in identifying absenteeism, it misses a higher proportion of actual absenteeism cases. This steep decline in recall indicates that the model has difficulty maintaining high recall as precision improves, suggesting a limited ability to balance both metrics well across thresholds. For absenteeism prediction, where recall (correctly identifying absenteeism cases) may be prioritized, this graph implies that a lower threshold could favor recall at the cost of some precision.
 
 **ROC curve**
 <br>
@@ -345,7 +345,7 @@ The Random Forest model achieved accuracy of 72% on testing, a reduction in accu
 
 **Precision/Recall**
 <br>
-Similarly to the logistic regression, these precision/recall graphs show that as precision increases, recall drops sharply, indicating a tradeoff where improving precision leads to missing more absenteeism cases. The intersection point around the midpoint suggests a balanced threshold, but the rapid decline in recall highlights the model's difficulty in maintaining both metrics
+Similarly to the logistic regression, these precision/recall graphs show that as precision increases, recall drops sharply, indicating a tradeoff where improving precision leads to missing more absenteeism cases. The intersection point around the midpoint suggests a balanced threshold, but the rapid decline in recall highlights the model's difficulty in maintaining both metrics.
 
 **ROC curves**
 <br>
