@@ -11,6 +11,10 @@ In todays environment of workplace is extremely competitive and leads to increas
 ### Purpose
 Based on information like Transportation Expenses, Medical Reasons, and personal information, we want to predict likelyhood of an employee being away from work more than 3 or 4 hours.
 
+### Notebooks
+[NotebookEDA](AbsenteeismEDA.ipynb)
+[Notebookmodeling](AbsenteeismModeling.ipynb)
+
 #### Dataset
 The dataset was obtained from Kaggle [absenteeismDataset](https://www.kaggle.com/code/faressayah/predict-employee-absenteeism-from-work/input)
 
