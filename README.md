@@ -348,7 +348,7 @@ Similarly to the logistic regression, these precision/recall graphs show that as
 <br>
 Also, similarly to the logistic regression, this ROC curve for the random forest also has a curve that moves to the top left corner, demonstrating good discrimination ability. The high area under the curve suggests that the model can distinguish between absenteeism and non-absenteeism. 
 
-### XG Boost
+## XG Boost
 The best parmeters for XGBoost are :
 ```
 'base_score'      : 0.5
@@ -379,7 +379,7 @@ The intersection point for precision and recall here suggests a higher threshold
 **ROC Curves**
  This ROC curve for the XGBoost model also has a curve that moves to the top left corner, demonstrating good discrimination ability. The high area under the curve suggests that the model can distinguish between absenteeism and non-absenteeism. It looks relatively the same as the other models' ROC curves.
 
-### Support Vector Machine
+## Support Vector Machine
 The best parammeters for the model are:
 ```
  'C'     : 60
@@ -406,7 +406,7 @@ The intersection point for precision and recall here suggests a higher threshold
 **ROC curves**
 This ROC curve for the SVM also has a curve that moves to the top left corner, demonstrating good discrimination ability. The high area under the curve suggests that the model can distinguish between absenteeism and non-absenteeism. The curve is slightly higher than all the other previous models reflecting its high accuracy.
 
-### Comparison of 4 models
+## Comparison of 4 models
 
 <img src="images/ALL_Accurracy_Numbers.png">
 <br>
