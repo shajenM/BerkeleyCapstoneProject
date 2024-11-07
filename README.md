@@ -265,7 +265,7 @@ The exploratory analysis provided valuable information about each feature. The f
 <br>
 <br>
 
-## Modeling
+# Modeling
 The modeling was performed using multiple models. Following models were used:
 
 ```
@@ -276,7 +276,7 @@ The modeling was performed using multiple models. Following models were used:
 ```
 The dataset was standardized using **StandardScaler** and **MinMaxScaler**
 
-### Logistic Regression
+## Logistic Regression
 <br>
 The training was done using parameter solver 'liblinear' and penalty 11
 
@@ -314,7 +314,7 @@ The model achieved a mean cross-validation score of 70.13%, indicating a strong 
 <br>
 Transportation expenses and the number of children have positive associations with absenteeism, while factors like age, season, pet ownership, and health-related responsibilities are associated with lower absenteeism odds. 
 
-### Random Forest
+## Random Forest
 The best paramters for this model are:
 ```
 bootstrap         : True
